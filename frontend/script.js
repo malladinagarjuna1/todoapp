@@ -131,7 +131,7 @@ document.getElementById('signin-form').addEventListener('submit', async (e) => {
     const token = localStorage.getItem('token');
     
     try {
-        // ✅ USE CORRECT GET ENDPOINT
+      
         const response = await fetch('http://localhost:5000/todo/get', {
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -140,7 +140,7 @@ document.getElementById('signin-form').addEventListener('submit', async (e) => {
 
         const { todos } = await response.json();
         const todoList = document.getElementById('todo-list');
-        todoList.innerHTML = ''; // ✅ clear previous todos
+        todoList.innerHTML = ''; 
 
         todos.forEach(todo => {
             const li = document.createElement('li');
